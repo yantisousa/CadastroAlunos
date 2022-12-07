@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alunos;
+use App\Models\Livros;
 use Illuminate\Http\Request;
 
 class AlunosController extends Controller
@@ -14,10 +15,17 @@ class AlunosController extends Controller
     public function store(Request $dadosAlunos)
     {   
      
-        Alunos::create([
+        $create = Alunos::create([
             'nome' => $dadosAlunos->nome,
             'dataNasc' => $dadosAlunos->data
         ]);
+        $create->livro()->create([
+            'titulo' => $dadosAlunos->titulo,
+            'ano' => $dadosAlunos->ano,
+        ]);
+
+
+
         return to_route('alunos.index');
     }
     public function index()

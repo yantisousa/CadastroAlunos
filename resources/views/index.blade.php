@@ -93,6 +93,7 @@
                         <button type="submit" class="btn btn-danger">X</button>
                     </form>
                 </td>
+
               </tr>
               @endforeach
             </tbody>

@@ -13,7 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('aluno', function (Blueprint $table) {
+        Schema::create('alunos', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome', 255);
+            $table->dateTime('dataNasc');
+            $table->timestamps();
+        });
+    }
+    public function rename()
+    {
+        Schema::rename('alunos', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 255);
             $table->dateTime('dataNasc');

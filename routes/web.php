@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Alunos;
 use App\Http\Controllers\AlunosController;
+use App\Http\Controllers\LivrosController as ControllersLivrosController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +28,6 @@ Route::get('/edit/{id}', [AlunosController::class, 'edit'])->name('alunos.edit')
 Route::put('/update/{id}', [AlunosController::class, 'update'])->name('alunos.update');
 
 Route::delete('/delete{id}', [AlunosController::class, 'destroy'])->name('alunos.destroy');
+
+
+// Route::get('/index', [ControllersLivrosController::class, 'index'])
